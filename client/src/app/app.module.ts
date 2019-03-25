@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { NgModule } from '@angular/core';
 
@@ -19,6 +22,8 @@ import { BlogComponent } from './blog/blog.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
     MatCardModule,
     FlexLayoutModule,
     AppRoutingModule

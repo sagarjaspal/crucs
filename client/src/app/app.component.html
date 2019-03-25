@@ -8,20 +8,20 @@
     </div>
 
     <div class="col-md-6">
-      <form id="login" action="login()">
+      <form id="login">
         <div class="row">
 
           <div class="col-md-4">
             <label for="uname">Username</label>
-            <input type="text" placeholder="Enter Username" name="uname" required autofocus>
+            <input type="text" [(ngModel)] = "user.username" placeholder="Enter Username" name="uname" required autofocus>
           </div>
 
           <div class="col-md-4">
             <label for="pass">Password</label>
-            <input type="password" placeholder=" Enter Password" name="pass" required>
+            <input type="password" [(ngModel)] = "user.password" placeholder=" Enter Password" name="pass" required>
           </div>
 
-          <button style="margin-top: 24px" id="login-btn" class="btn btn-primary" type="submit">LOGIN</button>
+          <button style="margin-top: 24px" id="login-btn" class="btn btn-primary" (click) = "validateLogin();" type="submit">LOGIN</button>
         </div>
       </form>
     </div>
