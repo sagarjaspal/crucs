@@ -1,0 +1,75 @@
+#lower{
+    border-width: 0px;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+}
+
+#menu > h2{
+    color: white;
+}
+
+#lower > img{
+    width: 100%;
+}
+
+body{
+    background-color: rgb(48, 172, 48);
+}
+
+input{
+    font-size: 16px;
+}
+
+button{
+    font-size: 12px;
+    text-decoration-color: white;
+    background-color: #2998e4;
+}
+
+
+.row { 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.left-side {
+    flex: 20%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 20px; /* Some padding */
+}
+
+/* Main column */
+.main { 
+    flex: 60%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 30px; /* Some padding */
+}
+
+.main img{
+    position: relative;
+    width: 100%;
+}
+
+.right-side {
+    flex: 20%; /* Set the width of the sidebar */
+    background-color: #f1f1f1; /* Grey background color */
+    padding: 20px; /* Some padding */
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row { 
+        flex-direction: column;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    nav a {
+        float: none;
+        width: 100%;
+    }
+}

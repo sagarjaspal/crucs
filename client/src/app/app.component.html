@@ -1,0 +1,41 @@
+<header>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <div id="upper" class="row">
+    <div class="col-md-6">
+      <a routerLink="/">
+        <img class="img-responsive" src="../assets/images/logo1.jpeg" alt="logo" />
+      </a>
+    </div>
+
+    <div class="col-md-6">
+      <form id="login" action="login()">
+        <div class="row">
+
+          <div class="col-md-4">
+            <label for="uname">Username</label>
+            <input type="text" placeholder="Enter Username" name="uname" required autofocus>
+          </div>
+
+          <div class="col-md-4">
+            <label for="pass">Password</label>
+            <input type="password" placeholder=" Enter Password" name="pass" required>
+          </div>
+
+          <button style="margin-top: 24px" id="login-btn" class="btn btn-primary" type="submit">LOGIN</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<nav class="topnav" id="myTopnav">
+  <a routerLink = 'home' routerLinkActive="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about" routerLinkActive="active">About</a>
+  <a routerLink = 'blog' routerLinkActive="active">Blog</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</nav>
+<router-outlet></router-outlet>
