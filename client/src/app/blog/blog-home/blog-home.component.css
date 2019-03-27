@@ -4,9 +4,14 @@
 }
 
 .header-img{
-    background-image: url('../../assets/images/index.png');
+    background-image: url('../../../assets/images/index.png');
     background-size: cover;
 }
+
+.example-button-row button,
+.example-button-row a {
+    margin-right: 8px;
+  }
 
 mat-card-title{
     font-size: 36px !important;
@@ -16,4 +21,10 @@ mat-card-title{
 
 mat-card > img{
     max-height: 360px !important;
+}
+
+.mat-fab {
+    background-color: #4CAF50 !important;
+	width: 80px;
+	height: 80px;
 }

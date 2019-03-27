@@ -1,0 +1,11 @@
+#ok {
+    background-color: #4CAF50 !important;
+	width: 80px;
+	height: 80px;
+}
+
+#cancel {
+	background-color: rgb(255, 0, 0) !important;
+	width: 80px;
+	height: 80px;
+}

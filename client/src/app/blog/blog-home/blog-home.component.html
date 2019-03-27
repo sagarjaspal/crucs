@@ -10,6 +10,8 @@
 
     <mat-card-content>
       <p>This is the introductry part of the blog which provides a brief description about post</p>
+      <br>
+      <mat-icon svgIcon="pre-thumbs-up">Like</mat-icon>
     </mat-card-content>
   </mat-card>
 
@@ -24,4 +26,9 @@
       <p>This is the introductry part of the blog which provides a brief description about post</p>
     </mat-card-content>
   </mat-card>
+  <div style="z-index:5; position : fixed;display : flex; 
+  align-self : flex-end; bottom : 2%; right: 2%; margin-bottom : 2%;">
+
+    <a mat-fab style="margin-right: 15%;" routerLink="add" cdkFocusInitial><img src="../../assets/images/add.png" style="padding-bottom:20px"></a>
+  </div>
 </div>
