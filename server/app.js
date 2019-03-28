@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Teacher = require('./model/teacher');
+const Post = require('./model/post');
 
 const url = 'mongodb://localhost/cseDb';
 
@@ -16,7 +17,8 @@ app.post('/api/user/login', (req, res) => {
         Teacher.find({username: req.body.username, password: req.body.password}, (err, teacher) => {
             if(err) throw err;
             if(teacher.length === 1)
-            {
+            {   
+                mongoose.disconnect();
                 return res.status(200).json({
                     status: 'success',
                     data: teacher
@@ -24,6 +26,7 @@ app.post('/api/user/login', (req, res) => {
             }
             else
             {
+                mongoose.disconnect();
                 return res.status(200).json({
                     status: 'failed',
                     message: 'Login failed'
@@ -32,5 +35,31 @@ app.post('/api/user/login', (req, res) => {
         })
     })
 });
+
+app.post('/api/blog/addPost', (req, res) => {
+
+    temp = req.body.description;
+    if(temp == '')
+        temp = req.body.content.slice(0,50) + " ...";
+    
+    mongoose.connect(url, (err) => {
+        if(err) throw err;
+
+        const post = new Post({
+            title: req.body.title,
+            description: temp,
+            content: req.body.content
+        })
+
+        post.save((err, doc) => {
+            if(err) throw err;
+            return res.status(200).json({
+                status: 'success',
+                data: doc
+            })
+        })
+    })
+
+})
 
 app.listen(3000, () => console.log('connected on port 3000'));

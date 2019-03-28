@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
     title : { type: String, required: true, unique: true },
     description : { type: String },
-    post : { type: String},
+    content : { type: String, required: true},
     author : {type: String}
 }, { collection: 'post'});
 

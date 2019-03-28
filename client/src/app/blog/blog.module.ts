@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogHomeComponent } from './blog-home/blog-home.component';
@@ -20,6 +21,7 @@ import { OkayDialog } from './add-post/add-post.component';
   imports: [
     CommonModule,
     BlogRoutingModule,
+    FormsModule,
     FlexLayoutModule,
     MatCardModule,
     MatButtonModule,
