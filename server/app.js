@@ -53,6 +53,8 @@ app.post('/api/blog/addPost', (req, res) => {
 
         post.save((err, doc) => {
             if(err) throw err;
+
+            mongoose.disconnect();
             return res.status(200).json({
                 status: 'success',
                 data: doc
@@ -60,6 +62,22 @@ app.post('/api/blog/addPost', (req, res) => {
         })
     })
 
+})
+
+app.post('/api/blog/showPost', (req, res) => {
+    mongoose.connect(url, (err) => {
+        if(err) throw err;
+
+        Post.find( {}, [], { sort: { _id: -1 } }, (err, doc) => {
+            if(err) throw err;
+            
+            mongoose.disconnect();
+            return res.status(200).json({
+                status: 'success',
+                data: doc
+            })
+        })
+    })
 })
 
 app.listen(3000, () => console.log('connected on port 3000'));

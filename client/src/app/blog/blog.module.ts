@@ -9,15 +9,17 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatCardModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material'
-import { MatDialogModule } from '@angular/material'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material';
+import { MatRippleModule } from '@angular/material/core'
 
 import { AddPostComponent } from './add-post/add-post.component';
 import { OkayDialog } from './add-post/add-post.component';
+import { ViewPostComponent } from './view-post/view-post.component';
 
 @NgModule({
-  declarations: [BlogHomeComponent, AddPostComponent, OkayDialog],
+  declarations: [BlogHomeComponent, AddPostComponent, OkayDialog, ViewPostComponent],
   imports: [
     CommonModule,
     BlogRoutingModule,
@@ -28,7 +30,8 @@ import { OkayDialog } from './add-post/add-post.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRippleModule
   ],
   exports: [
     MatCardModule,
@@ -36,7 +39,8 @@ import { OkayDialog } from './add-post/add-post.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRippleModule
   ],
   entryComponents: [OkayDialog]
 })

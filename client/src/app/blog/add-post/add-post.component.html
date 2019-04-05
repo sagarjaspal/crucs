@@ -1,7 +1,14 @@
+<!--
+  TODO:
+  Add errors in form-fields
+-->
+
+
 <div fxLayout="column" fxLayoutAlign="space-around center" style="width:100%; margin: 2%">
   <mat-form-field appearance="outline" fxFlex style="width:70%">
     <mat-label>Title</mat-label>
-    <input matInput [(ngModel)]="post.title" placeholder="Maximum length: 30 characters">
+    <input matInput #input [(ngModel)]="post.title" maxlength="30" placeholder="Maximum length: 30 characters">
+    <mat-hint align="end" >{{input.value?.length || 0}}/30</mat-hint>
   </mat-form-field>
 
   <mat-form-field appearance="outline" fxFlex style="width:70%">
@@ -19,7 +26,7 @@
 
 <div style="z-index: 5; position: fixed; display: flex;
             align-self: flex-end; bottom : 2%; right: 2%; margin-bottom : 2%;">
-  <a id="ok" mat-fab (click)="openDialog(1)"><img src="../../../assets/images/ok.png" style="margin-bottom:80px"></a>
+  <button type= "submit" id="ok" mat-fab (click)="openDialog(1)"><img src="../../../assets/images/ok.png" style="margin-bottom:80px"></button>
 </div>
 
 <div style="z-index: 5; position: fixed; display:flex;

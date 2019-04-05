@@ -1,11 +1,8 @@
 .card{
+    cursor: pointer;
     max-width: 800px;
+    flex: 1 1 100% !important; 
     margin-top: 4%;
-}
-
-.header-img{
-    background-image: url('../../../assets/images/index.png');
-    background-size: cover;
 }
 
 .example-button-row button,

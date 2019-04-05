@@ -1,31 +1,19 @@
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 
-<div fxLayout="column" fxLayoutAlign="space-around center">
-  <mat-card class="mat-elevation-z10 card" fxFlex>
+
+<div fxLayout="column" *ngFor="let post of posts" fxLayoutAlign="space-around center">
+  <mat-card matRipple tabindex="0" class="mat-elevation-z10 card" fxFlex>
+    <a routerLink="view" [state]="{ title: post.title, description: post.description,
+                                    url: post.url, content: post.content, author: post.author }">
     <mat-card-header>
-      <mat-card-title>Making a Blog App using Angular</mat-card-title>
+      <mat-card-title>{{post.title}}</mat-card-title>
     </mat-card-header>
-
-    <img mat-card-image src="../../assets/images/blog.jpg">
-
+    <img mat-card-image src= {{post.url}}>
     <mat-card-content>
-      <p>This is the introductry part of the blog which provides a brief description about post</p>
-      <br>
-      <mat-icon svgIcon="pre-thumbs-up">Like</mat-icon>
+      <p>{{post.description}}</p>
     </mat-card-content>
+  </a>
   </mat-card>
 
-  <mat-card class="mat-elevation-z10 card" fxFlex>
-    <mat-card-header>
-      <mat-card-title>CRUD app using MEAN</mat-card-title>
-    </mat-card-header>
-
-    <img mat-card-image src="../../assets/images/blog.jpg">
-
-    <mat-card-content>
-      <p>This is the introductry part of the blog which provides a brief description about post</p>
-    </mat-card-content>
-  </mat-card>
   <div style="z-index:5; position : fixed;display : flex; 
   align-self : flex-end; bottom : 2%; right: 2%; margin-bottom : 2%;">
 
