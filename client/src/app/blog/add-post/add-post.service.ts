@@ -14,8 +14,8 @@ export class AddPostService {
     return this.http.post('/api/blog/addPost', {
       title: post.title,
       description: post.description,
-      content: post.content,
-      author: post.author
+      url: post.url,
+      content: post.content
     })
   }
 }

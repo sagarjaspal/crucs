@@ -41,6 +41,8 @@ export class AddPostComponent implements OnInit
   {
     if(this.post.title && this.post.content )
     {
+      this.post.url = '../../../assets/images/blog.jpg'
+      
       this.addPostService.addPost(this.post).subscribe(res => {
         console.log(res);
       })

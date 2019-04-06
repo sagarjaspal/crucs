@@ -29,6 +29,7 @@ export class BlogHomeComponent implements OnInit {
   getAllPost(){
     this.showPostService.getAllPost().subscribe((result) => {
       this.posts = result['data'];
+      console.log(this.posts);
     })
   }
 

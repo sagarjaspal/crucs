@@ -40,17 +40,20 @@ app.post('/api/blog/addPost', (req, res) => {
 
     temp = req.body.description;
     if(temp == '')
-        temp = req.body.content.slice(0,50) + " ...";
+        temp = req.body.content.slice(0,100) + " ...";
     
     mongoose.connect(url, (err) => {
         if(err) throw err;
 
+        console.log('connection to mongodb made');
         const post = new Post({
             title: req.body.title,
             description: temp,
+            url: req.body.url,
             content: req.body.content
         })
 
+  
         post.save((err, doc) => {
             if(err) throw err;
 
