@@ -8,7 +8,7 @@
 
     <div class="col-md-6">
       <form id="login">
-        <div class="row">
+        <div class="row" style="margin-left: auto">
 
           <div class="col-md-4">
             <label for="uname">Username</label>
@@ -20,7 +20,13 @@
             <input type="password" [(ngModel)] = "user.password" placeholder=" Enter Password" name="pass" required>
           </div>
 
-          <button style="margin-top: 24px" id="login-btn" class="btn btn-primary" (click) = "validateLogin();" type="submit">LOGIN</button>
+          <button style="margin-top: 2%" id="login-btn" class="btn btn-primary" (click) = "validateLogin();" type="submit">LOGIN</button>
+        </div>
+        <br>
+        <div class="row" style="margin-left: auto" >
+          <label class="radio-inline col-md-2"><input type="radio" name="role" id="student" checked> Student</label>
+          <label class="radio-inline col-md-2"><input type="radio" name="role" id="teacher"> Teacher</label>
+          <label class="radio-inline col-md-2"><input type="radio" name="role" id="admin"> Admin</label>
         </div>
       </form>
     </div>
@@ -29,12 +35,20 @@
 
 <nav class="topnav" id="myTopnav">
   <a routerLink = 'home' routerLinkActive="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about" routerLinkActive="active">About</a>
   <a routerLink = 'blog' routerLinkActive="active">Blog</a>
+  <a href="#about" routerLinkActive="active">About Us</a>
+  <div class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#people">People
+    <span class="caret"></span></a>
+    <div class="dropdown-menu">
+      <a href="#">Teachers</a>
+      <a href="#">Students</a>
+    </div>
+  </div>
+  <a href="#contact">Contact Us</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </nav>
+
 <router-outlet></router-outlet>
