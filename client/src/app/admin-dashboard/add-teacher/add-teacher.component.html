@@ -1,0 +1,43 @@
+<app-sidebar></app-sidebar>
+
+<div style="margin-left: 270px; margin-top: 30px; margin-right: 20px"> 
+  <h1 style="margin-left: 20px">Add New Teacher</h1>
+  <br>
+  <form>
+      <div class="form-group" style="margin-left: 10px; margin-right: 10px">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Full Name">
+        </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="qual">Highest Qualification</label>
+          <input type="text" class="form-control" id="qual">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="desi">Designation</label>
+          <select id="desi" class="form-control">
+            <option selected>Professor</option>
+            <option>Associate Professor</option>
+            <option>Assistant Professor</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="exp">Years of Experience</label>
+          <input type="number" class="form-control" id="exp">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-left:40%">Add Teacher</button>
+    </form>
+</div>

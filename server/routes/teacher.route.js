@@ -4,13 +4,15 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 const Teacher = require('../model/teacher');
-/*
+
 router.post('/register', (req, res, next) => {
-    let newTeacher = new Teacher({
-        name = req.body.name,
-        username = req.body.username,
-        passport = req.body.password
-    });
+    var data = newTeacher = {
+      name: req.body.name,
+      username: req.body.username,
+      passport: req.body.password
+    };
+
+    let newTeacher = new Teacher(data);
 
     Teacher.addTeacher(newTeacher, (err, teacher) => {
         if(err){
@@ -22,7 +24,7 @@ router.post('/register', (req, res, next) => {
         
     });
 });
-*/
+
 router.post('/authenticate', (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
